@@ -3,7 +3,7 @@ package ru.gb.lessons.interfaces.core;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.gb.lessons.interfaces.Main;
+
 import ru.gb.lessons.interfaces.core.clients.Animal;
 import ru.gb.lessons.interfaces.core.clients.Animals;
 import ru.gb.lessons.interfaces.core.clients.Human;
@@ -29,7 +29,6 @@ public class VetClinic {
         getcanmotion(animals, "Flyable", " Умеет летать");
         getcanmotion(animals, "Soundable", " Издавать звуки может");
         getcanmotion(animals, "Swimable", " Плавает!)");
- 
  
  
     }
