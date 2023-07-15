@@ -41,6 +41,7 @@ public class VetClinic {
      * @param motion Наимонование интерфейса действия
      * @param result Вывод сообщения по результату
      */
+
     public static void getcanmotion(List <Animals> listcheck, String motion, String result){
         for (Animals item : listcheck) {
             boolean ok = false;

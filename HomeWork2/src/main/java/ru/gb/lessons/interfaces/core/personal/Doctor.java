@@ -3,6 +3,7 @@ package ru.gb.lessons.interfaces.core.personal;
 import ru.gb.lessons.interfaces.core.clients.Animal;
 import ru.gb.lessons.interfaces.core.clients.Animals;
 
+
 public class Doctor {
     String name;
     String profession;
@@ -17,6 +18,7 @@ public class Doctor {
  * @param experience - Длительность опыта
  * @param office - Номер рабочего кабинета
  */
+
     public Doctor(String name, String profession, int age, int experience, int office){
         this.name = name;
         this.profession = profession;
