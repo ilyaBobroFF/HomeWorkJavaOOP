@@ -1,7 +1,7 @@
-package classes;
+package linkedListSelf;
 
 
-import interfaces.GBLinked;
+import linkedListInterfaces.GBLinked;
 
 
 public class GBLinkedList<E> 
@@ -15,13 +15,7 @@ public class GBLinkedList<E>
         lastEl = new Node<E>(firstEl, null, null);
         firstEl = new Node<E>(null, null, lastEl);
     }
-   // Простой метод для вывода элементов
-
-    public void printLinked(){
-        for(int i = 0; i < size; i++){
-            System.out.println(this.getByIndex(i));
-        }
-    }
+   
     
     
     @Override
@@ -56,8 +50,12 @@ public class GBLinkedList<E>
     }
     @Override
     public String toString() {
-        
-        return "Not implemented";
+        StringBuilder result = new StringBuilder();
+        for(int i = 0; i < size - 1; i++){
+            result.append(this.getByIndex(i)+"\n");
+        }
+        result.append(this.getByIndex(size-1));
+        return result.toString();
     }
     
     

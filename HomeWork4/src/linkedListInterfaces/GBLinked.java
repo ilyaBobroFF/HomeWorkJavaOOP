@@ -1,4 +1,4 @@
-package interfaces;
+package linkedListInterfaces;
 
 public interface GBLinked<E> {
     

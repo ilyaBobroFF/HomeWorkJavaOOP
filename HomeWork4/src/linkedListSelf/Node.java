@@ -1,4 +1,4 @@
-package classes;
+package linkedListSelf;
 
 public class Node<E> {
     E element;

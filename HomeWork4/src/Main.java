@@ -1,5 +1,5 @@
 
-import classes.GBLinkedList;
+import linkedListSelf.GBLinkedList;
 
 
 public class Main {
@@ -11,9 +11,9 @@ public class Main {
         
         expierence.addFirst(333);
         
-        expierence.printLinked();
         
         System.out.println(expierence.size());
+        System.out.println(expierence);
     }
 
 
