@@ -1,0 +1,92 @@
+package notebook.model.repository.impl;
+
+
+import notebook.model.data.impl.DataFile;
+import notebook.model.User;
+import notebook.model.repository.GBRepository;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+public class UserRepository implements GBRepository<User, Long> {
+
+    //private final FileOperation operation;
+    private final String fileName;
+    private List<User> userList;
+
+    public UserRepository(String fileName) {
+        this.fileName = fileName;
+        this.userList = upLoad();
+    }
+    // Выгрузка из файла списка контактов
+    @Override
+    public List<User> upLoad() {
+        DataFile fileTxtInput = new DataFile(fileName);
+        List<User> users = fileTxtInput.readData();
+//
+        return users;
+    }
+    // Передача текущего списка контактов
+    @Override
+    public List<User> findAll() {
+        return this.userList;
+    }
+    // Добавление нового контакта в текущий список
+    @Override
+    public void create(User user) {
+        long max = 0L;
+        for (User u : upLoad()) {
+            long id = u.getId();
+            if (max < id){
+                max = id;
+            }
+        }
+        long next = max + 1;
+        user.setId(next);
+        this.userList.add(user);
+    }
+    // Нахождение конкретного контакта по ID
+    @Override
+    public User findById(Long id) {
+        User ediUser = this.userList.stream()
+                .filter(u -> u.getId()
+                        .equals(id))
+                .findFirst().orElseThrow(() -> new RuntimeException("User not found"));
+        return ediUser;
+    }
+    // Изменение конкретного контакта по ID
+    @Override
+    public void update(Long id, User user) {
+        User ediUser = findById(id);
+        ediUser.setId(id);
+        ediUser.setFirstName(user.getFirstName());
+        ediUser.setPhone(user.getPhone());
+        ediUser.setLastName(user.getLastName());
+    }
+    //Удаление конкретного контакта по ID
+    @Override
+    public boolean delete(Long delId) {
+        List <User> newUsers = new ArrayList<>();
+        boolean delOk = false;
+        for (User item : userList) {
+            if (Objects.equals(item.getId(), delId)) delOk = true;
+            else newUsers.add(item);
+        }
+        userList.clear();
+        userList = newUsers;
+        return delOk;
+    }
+    //Загрузка текущего списка контактов в файл
+    @Override
+    public void downLoad(List<User> users){
+        DataFile fileTxtOut = new DataFile(fileName, users);
+        fileTxtOut.writeData();
+    }
+    //Завершение работы и загрузка текущего списка контактов в файл
+    public void finish(){
+        downLoad(this.userList);
+    }
+
+}
+
