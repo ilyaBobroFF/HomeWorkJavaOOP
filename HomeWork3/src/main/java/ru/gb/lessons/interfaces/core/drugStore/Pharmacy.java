@@ -3,6 +3,7 @@ package ru.gb.lessons.interfaces.core.drugStore;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class Pharmacy implements Iterable<Component>, Comparable<Pharmacy>, Marker {
     private List<Component> components;
@@ -60,12 +61,26 @@ public class Pharmacy implements Iterable<Component>, Comparable<Pharmacy>, Mark
         int pow2 = getPower(o);
         if (pow1 != pow1) {
             return Integer.compare(pow1, pow2);
-        }
-        else return compareName(o);
+        } else return compareName(o);
+    }
 //        Альтернативная запись:
 //        if (pow1 > pow2) return 1;
 //        else if (pow1 < pow2) return -1;
 //        else return 0;
+ //   }
+    @Override
+    public int hashCode(){
+        int result = 0;
+        for (Component item : components) {
+            result += item.getName().hashCode();
+        }
+        return result;
+    }
+    @Override
+    public boolean equals(Object o){
+    Pharmacy temp = new Pharmacy();
+    temp = (Pharmacy) o;
+        return sumName(this).equals(sumName(temp));
     }
 
     private int getPower (Pharmacy pharm) {
@@ -106,4 +121,5 @@ public class Pharmacy implements Iterable<Component>, Comparable<Pharmacy>, Mark
         int name2size = sumName(o).length();
         return Integer.compare(name1size, name2size);
     }
+
 }

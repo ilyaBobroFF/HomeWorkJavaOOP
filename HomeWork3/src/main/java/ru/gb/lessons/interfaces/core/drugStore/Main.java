@@ -5,10 +5,7 @@ import ru.gb.lessons.interfaces.core.clients.DoctorSpecialities;
 import ru.gb.lessons.interfaces.core.personal.Doctor;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 import static ru.gb.lessons.interfaces.core.clients.DoctorSpecialities.THERAPIST;
 
@@ -20,11 +17,10 @@ public class Main {
 
         pharmacy1.addComponent(comp1).addComponent(comp2);
 
-//        Интерфейс Serializable - отвечает за сериализацию объектов. Превращает объект в массив байтов, который потом
-//        можно собрать обратно при помощи десериализатора.
+//        
 
         List<Marker> markers = new ArrayList<>();
-        Doctor doc1 = new Doctor(234, "Петрович", THERAPIST, "8(495)429-43-23");
+        Doctor doc1 = new Doctor(234, "��������", THERAPIST, "8(495)429-43-23");
 //        markers.add().add();
 
 //        while (((Iterator<Component>) pharmacy1).hasNext()){
@@ -57,8 +53,29 @@ public class Main {
         Collections.sort(nomenclature);
         System.out.println("============================================================================");
         System.out.println(nomenclature);
-        // Проверка для задания №3
+        
+        // 
         pharmacy2.addComponent(comp5);
+        HashSet<Pharmacy> rrr = new HashSet<>();
+        System.out.println("Первый вывод" + rrr);
+        Pharmacy pharmacy7 = new Pharmacy();
+        pharmacy7.addComponent(comp1).addComponent(comp6);
+        System.out.println(rrr.add(pharmacy1));
+        System.out.println(rrr.add(pharmacy3));
+        System.out.println(rrr.add(pharmacy2));
+        System.out.println(rrr.add(pharmacy2));
+        System.out.println(rrr.add(pharmacy7));
+        System.out.println(rrr+"Выполнено");
+        String fi = "PPPP";
+        String gi = new String("PPPP");
+        String li = "jhjhjhj";
+        System.out.println( "fi" + fi.hashCode());
+        System.out.println( "gi" + gi.hashCode());
+        System.out.println( "li" + li.hashCode());
+        System.out.println(fi==gi);
+
+
+        
 
 
 

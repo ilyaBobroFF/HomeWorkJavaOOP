@@ -86,19 +86,19 @@ public class VetClinic {
         System.out.println(wildCat1);
         animals.add(wildCat1);
 
-        System.out.println("\nНАШИ ПАЦИЕНТЫ: ");
+        System.out.println("\nНАШ ПАЦЕНТ: ");
         printPatients(animals);
-        System.out.println("\nНАШИ БЕГАЮЩИЕ ПАЦИЕНТЫ: ");
+        System.out.println("\nНАШ БЕГАЮЩЕ ПАЦЕНТ: ");
         System.out.println(animals.get(0).getClass().getInterfaces()[0]);
         LinkedList<Animal> runningPatients = getRunnable();
         printPatients(runningPatients);
-        System.out.println("\nНАШИ ПЛАВАЮЩИЕ ПАЦИЕНТЫ: ");
+        System.out.println("\nНАШ ПЛАВАЮЩЕ ПАЦЕНТЫ: ");
         LinkedList<Animal> swimmingPatients = getSwimable();
         printPatients(swimmingPatients);
-        System.out.println("\nНАШИ ЛЕТАЮЩИЕ ПАЦИЕНТЫ: ");
+        System.out.println("\nНАШ ЛЕТАЮЩЕ ПАЦЕНТЫ: ");
         LinkedList<Animal> flyingPatients = getFlyable();
         printPatients(flyingPatients);
-        System.out.println("\nНАШИ ПАЦИЕНТЫ, ИЗДАЮЩИЕ ЗВУКИ: ");
+        System.out.println("\nНАШ ПАЕНТЫ, ЗДАЮЩЕ ЗВУК: ");
         LinkedList<Animal> soundingPatients = getSoundable();
         printPatients(soundingPatients);
 

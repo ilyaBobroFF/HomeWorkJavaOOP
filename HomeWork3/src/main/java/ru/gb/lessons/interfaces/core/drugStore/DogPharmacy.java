@@ -1,8 +1,10 @@
 package ru.gb.lessons.interfaces.core.drugStore;
 
-public class DogPharmacy extends Pharmacy {
-    public DogPharmacy() {
-        super();
-    }
+import java.util.Collection;
+import java.util.function.IntFunction;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+
+public class DogPharmacy  {
 
 }

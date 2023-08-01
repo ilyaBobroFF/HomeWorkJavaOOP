@@ -9,19 +9,19 @@ import java.util.Date;
 import java.util.List;
 
 /**
-  Абстракция животного - пациента ветклиники.
+  ���������� ��������� - �������� ����������.
  */
 public abstract class  Animal {
 
     protected final String CLASS_NAME = "The " + getClass().getSimpleName();
 
-//  Поля класса отвечают за СОСТОЯНИЕ ОБЪЕКТА
-    protected int id; //идентификатор животного для хранения в БД
-    protected String name; // кличка животного
-    protected int numberOfLimbs; //количество конечностей
-    protected LocalDate registrationDate; //дата регистрации животного в клинике
-    protected Owner owner; // тот, кто принес животное в клинику
-    protected List<Record> records; // записи о болезнях животного
+//  ���� ������ �������� �� ��������� �������
+    protected int id; //������������� ��������� ��� �������� � ��
+    protected String name; // ������ ���������
+    protected int numberOfLimbs; //���������� �����������
+    protected LocalDate registrationDate; //���� ����������� ��������� � �������
+    protected Owner owner; // ���, ��� ������ �������� � �������
+    protected List<Record> records; // ������ � �������� ���������
 
     public Animal() {
     }
@@ -35,13 +35,13 @@ public abstract class  Animal {
         this.records = new ArrayList<>();
     }
 
-//  Методы класса отвечают за ПОВЕДЕНИЕ ОБЪЕКТА
+//  ������ ������ �������� �� ��������� �������
     protected void addRecord (Record record) {
-        //todo реализовать
+        //todo �����������
     }
 
-    //todo ПО ПРАВИЛАМ "ЧИСТОГО КОДА", МЕТОДЫ, ВЫЗЫВАЕМЫЕ ВНУТРИ ДРУГОГО МЕТОДА,
-    // ЛУЧШЕ РАСПОЛАГАТЬ СРАЗУ ПОД ЭТИМ МЕТОДОМ
+    //todo �� �������� "������� ����", ������, ���������� ������ ������� ������,
+    // ����� ����������� ����� ��� ���� �������
     public void hunt() {
         wakeUp();
         findFood();
